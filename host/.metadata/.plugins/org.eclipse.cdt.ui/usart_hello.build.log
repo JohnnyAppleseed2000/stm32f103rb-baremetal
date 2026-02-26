@@ -1,0 +1,10 @@
+18:32:16 **** Incremental Build of configuration Debug for project usart_hello ****
+make -j8 all 
+arm-none-eabi-size  usart_hello.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6264	     12	   1644	   7920	   1ef0	usart_hello.elf
+Finished building: default.size.stdout
+ 
+
+18:32:16 Build Finished. 0 errors, 0 warnings. (took 307ms)
+

@@ -1,0 +1,10 @@
+15:27:24 **** Rebuild of configuration Debug for project 000TestProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o 000TestProject.exe main.o 
+C:\Users\John.DESKTOP-ACCU4EE\CTOOLS\CTOOLS\mingw32\bin/ld.exe: C:/Users/John.DESKTOP-ACCU4EE/CTOOLS/CTOOLS/mingw32/bin/../lib/gcc/i686-w64-mingw32/9.2.0/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-crt0_c.o): in function `main':
+E:/mingwbuild/mingw-w64-crt-git/src/mingw-w64/mingw-w64-crt/crt/crt0_c.c:18: undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+
+15:27:25 Build Failed. 1 errors, 0 warnings. (took 717ms)
+

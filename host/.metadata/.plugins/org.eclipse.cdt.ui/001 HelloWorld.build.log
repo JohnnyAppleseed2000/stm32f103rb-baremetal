@@ -1,0 +1,21 @@
+17:24:14 **** Incremental Build of configuration Debug for project 001 HelloWorld ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32F103RBTx -DSTM32 -DSTM32F1 -DNUCLEO_F103RB -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:28:9: warning: implicit declaration of function 'ITM_SendChar' [-Wimplicit-function-declaration]
+   28 |         ITM_SendChar('A');
+      |         ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "001 HelloWorld.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\John.DESKTOP-ACCU4EE\Desktop\Embedded-C\My_Workspace\host\001 HelloWorld\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="001 HelloWorld.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 001 HelloWorld.elf
+ 
+arm-none-eabi-size  001\ HelloWorld.elf 
+arm-none-eabi-objdump -h -S 001\ HelloWorld.elf  > "001 HelloWorld.list"
+   text	   data	    bss	    dec	    hex	filename
+   3300	     92	   1900	   5292	   14ac	001 HelloWorld.elf
+Finished building: default.size.stdout
+ 
+Finished building: 001 HelloWorld.list
+ 
+
+17:24:14 Build Finished. 0 errors, 1 warnings. (took 627ms)
+

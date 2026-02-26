@@ -1,0 +1,65 @@
+2025-12-30 01:50:26,745 [INFO] WebApp:194 - Connection lost
+2025-12-30 01:50:33,055 [INFO] WebApp:191 - Connection restablished
+2025-12-30 01:50:35,305 [INFO] WebApp:194 - Connection lost
+2025-12-30 01:50:35,465 [INFO] WebApp:191 - Connection restablished
+2025-12-30 13:48:46,569 [INFO] WebApp:194 - Connection lost
+2025-12-30 13:48:56,982 [INFO] WebApp:191 - Connection restablished
+2025-12-30 13:48:58,875 [INFO] WebApp:194 - Connection lost
+2025-12-30 13:48:59,035 [INFO] WebApp:191 - Connection restablished
+2025-12-30 15:56:28,839 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 760834352 Bytes (1073741824)
+2025-12-30 15:56:28,958 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 776100648 Bytes (1073741824)
+2025-12-30 15:56:29,881 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 864656352 Bytes (1073741824)
+2025-12-30 15:56:30,310 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-12-30 15:56:30,310 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USART
+2025-12-30 15:56:30,310 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-12-30 15:56:30,312 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-12-30 15:56:30,312 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-12-30 15:56:30,313 [INFO] CodeGenerator:882 - code generatio: config db path: C:\ST\STM32CubeIDE_1.18.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\
+2025-12-30 15:56:30,401 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\John.DESKTOP-ACCU4EE\Desktop\Embedded-C\My_Workspace\host\Clock\MXTmpFiles\license.tmp_save
+2025-12-30 15:56:30,633 [INFO] CodeEngine:287 - Generated code: C:\Users\John.DESKTOP-ACCU4EE\Desktop\Embedded-C\My_Workspace\host\Clock\MXTmpFiles\license.tmp
+2025-12-30 15:56:30,669 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\John.DESKTOP-ACCU4EE\Desktop\Embedded-C\My_Workspace\host\Clock\MXTmpFiles\gpio.tmp_save
+2025-12-30 15:56:30,786 [INFO] CodeEngine:287 - Generated code: C:\Users\John.DESKTOP-ACCU4EE\Desktop\Embedded-C\My_Workspace\host\Clock\MXTmpFiles\gpio.tmp
+2025-12-30 15:56:30,806 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.UnknownHostException: stmicroelectronics.d3.sc.omtrdc.net
+2025-12-30 15:56:30,807 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.UnknownHostException: stmicroelectronics.d3.sc.omtrdc.net
+2025-12-30 15:56:30,807 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.UnknownHostException: stmicroelectronics.d3.sc.omtrdc.net
+2025-12-30 15:56:30,807 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.UnknownHostException: stmicroelectronics.d3.sc.omtrdc.net
+2025-12-30 15:56:30,807 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.UnknownHostException: stmicroelectronics.d3.sc.omtrdc.net
+2025-12-30 15:56:30,875 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\John.DESKTOP-ACCU4EE\Desktop\Embedded-C\My_Workspace\host\Clock\Core\Src\stm32f1xx_it.c_save
+2025-12-30 15:56:31,075 [INFO] CodeEngine:287 - Generated code: C:\Users\John.DESKTOP-ACCU4EE\Desktop\Embedded-C\My_Workspace\host\Clock\Core\Src\stm32f1xx_it.c
+2025-12-30 15:56:31,087 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\John.DESKTOP-ACCU4EE\Desktop\Embedded-C\My_Workspace\host\Clock\Core\Inc\stm32f1xx_it.h_save
+2025-12-30 15:56:31,146 [INFO] CodeEngine:287 - Generated code: C:\Users\John.DESKTOP-ACCU4EE\Desktop\Embedded-C\My_Workspace\host\Clock\Core\Inc\stm32f1xx_it.h
+2025-12-30 15:56:31,171 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\John.DESKTOP-ACCU4EE\Desktop\Embedded-C\My_Workspace\host\Clock\Core\Src\stm32f1xx_hal_msp.c_save
+2025-12-30 15:56:31,291 [INFO] CodeEngine:287 - Generated code: C:\Users\John.DESKTOP-ACCU4EE\Desktop\Embedded-C\My_Workspace\host\Clock\Core\Src\stm32f1xx_hal_msp.c
+2025-12-30 15:56:31,298 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\John.DESKTOP-ACCU4EE\Desktop\Embedded-C\My_Workspace\host\Clock\MXTmpFiles\system.tmp_save
+2025-12-30 15:56:31,370 [INFO] CodeEngine:287 - Generated code: C:\Users\John.DESKTOP-ACCU4EE\Desktop\Embedded-C\My_Workspace\host\Clock\MXTmpFiles\system.tmp
+2025-12-30 15:56:31,390 [INFO] CodeEngine:319 - oldGeneratedFile, C:\Users\John.DESKTOP-ACCU4EE\Desktop\Embedded-C\My_Workspace\host\Clock\Core\Inc\stm32f1xx_hal_conf.h_save
+2025-12-30 15:56:31,470 [INFO] CodeEngine:343 - Generated code: C:\Users\John.DESKTOP-ACCU4EE\Desktop\Embedded-C\My_Workspace\host\Clock\Core\Inc\stm32f1xx_hal_conf.h
+2025-12-30 15:56:31,517 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\John.DESKTOP-ACCU4EE\Desktop\Embedded-C\My_Workspace\host\Clock\Core\Inc\main.h_save
+2025-12-30 15:56:31,604 [INFO] CodeEngine:287 - Generated code: C:\Users\John.DESKTOP-ACCU4EE\Desktop\Embedded-C\My_Workspace\host\Clock\Core\Inc\main.h
+2025-12-30 15:56:31,613 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\John.DESKTOP-ACCU4EE\Desktop\Embedded-C\My_Workspace\host\Clock\Core\Src\main.c_save
+2025-12-30 15:56:31,697 [INFO] CodeEngine:287 - Generated code: C:\Users\John.DESKTOP-ACCU4EE\Desktop\Embedded-C\My_Workspace\host\Clock\Core\Src\main.c
+2025-12-30 15:56:32,146 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 281mS.
+2025-12-30 15:56:32,163 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0-B36
+2025-12-30 15:56:32,224 [INFO] ConfigFileManager:1590 - The Die is : DIE410
+2025-12-30 15:56:33,176 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 1013mS.
+2025-12-30 15:56:33,177 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 1mS.
+2025-12-30 15:56:33,180 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-12-30 15:56:40,061 [INFO] MainUpdater:2872 - connection check result : 10
+2025-12-30 15:56:40,134 [INFO] McuFinderGlobals:76 - Set McuFinderConnectedMode to true
+2025-12-30 15:56:40,137 [INFO] MultiScanPanel:200 - Auto-refresh data requested => check proxy status ongoing
+2025-12-30 15:56:40,137 [INFO] FinderPluginLoader:95 - Searching for filters in installed packs
+2025-12-30 15:56:41,110 [INFO] LoadUrlFilesThread:185 - End of LoadServerUrlFiles without Thread
+2025-12-30 15:56:41,110 [INFO] DetailPanel:341 - Set advertising image to C:/Users/John.DESKTOP-ACCU4EE/STM32Cube/Repository/\en.prom-st67w-expansion-board.png
+2025-12-30 15:56:45,702 [INFO] MultiScanPanel:200 - Auto-refresh data requested => check proxy status ongoing
+2025-12-30 15:56:45,758 [INFO] LoadUrlFilesThread:185 - End of LoadServerUrlFiles without Thread
+2025-12-30 15:56:45,758 [INFO] DetailPanel:341 - Set advertising image to C:/Users/John.DESKTOP-ACCU4EE/STM32Cube/Repository/\en.prom-st67w-expansion-board.png
+2025-12-30 15:57:08,002 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.UnknownHostException: stmicroelectronics.d3.sc.omtrdc.net
+2025-12-30 15:57:08,003 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.UnknownHostException: stmicroelectronics.d3.sc.omtrdc.net
+2025-12-30 15:57:08,003 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.UnknownHostException: stmicroelectronics.d3.sc.omtrdc.net
+2025-12-30 15:57:08,003 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.UnknownHostException: stmicroelectronics.d3.sc.omtrdc.net
+2025-12-30 15:57:08,004 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.UnknownHostException: stmicroelectronics.d3.sc.omtrdc.net
+2025-12-30 15:57:08,004 [INFO] McuFinderGlobals:76 - Set McuFinderConnectedMode to true
+2025-12-30 15:57:08,007 [INFO] ApiDb:448 - Save user favorites file C:\Users\John.DESKTOP-ACCU4EE/.stm32cubeide/favorites.mcus.txt: 0 item(s)
+2025-12-30 15:57:08,007 [INFO] ApiDb:452 - User favorites MCUs=[]
+2025-12-30 15:57:08,009 [INFO] ApiDb:448 - Save user favorites file C:\Users\John.DESKTOP-ACCU4EE/.stm32cubeide/favorites.boards.txt: 1 item(s)
+2025-12-30 15:57:08,009 [INFO] ApiDb:452 - User favorites Boards=[NUCLEO-F103RB]

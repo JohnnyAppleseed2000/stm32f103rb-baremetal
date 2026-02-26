@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;stm32f1xx_drivers/Src/asfs.c&apos;" deleteContents="false" description="Delete resource &apos;stm32f1xx_drivers/Src/asfs.c&apos;" element1="/stm32f1xx_drivers/Src/asfs.c" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1767681337271"/>&#x0A;<refactoring comment="Delete resource &apos;stm32f1xx_drivers/Src/asdf.c&apos;" deleteContents="false" description="Delete resource &apos;stm32f1xx_drivers/Src/asdf.c&apos;" element1="/stm32f1xx_drivers/Src/asdf.c" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1767681339627"/>
+</session>

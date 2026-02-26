@@ -1,0 +1,11 @@
+../bsp/ds3231.c:25:6:ds3231_init	8	static
+../bsp/ds3231.c:38:6:ds3231_set_current_time	24	static
+../bsp/ds3231.c:56:6:ds3231_get_current_time	24	static
+../bsp/ds3231.c:91:6:ds3231_set_current_date	24	static
+../bsp/ds3231.c:103:6:ds3231_get_current_date	16	static
+../bsp/ds3231.c:112:13:ds3231_gpio_config	32	static
+../bsp/ds3231.c:141:13:ds3231_i2c_config	8	static
+../bsp/ds3231.c:156:13:ds3231_write	32	static
+../bsp/ds3231.c:165:16:ds3231_read	32	static
+../bsp/ds3231.c:175:16:bcd_to_binary	16	static
+../bsp/ds3231.c:179:16:binary_to_bcd	24	static
