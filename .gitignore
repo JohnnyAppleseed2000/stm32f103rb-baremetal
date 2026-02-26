@@ -1,0 +1,19 @@
+# IDE 및 개인 설정 파일
+.metadata/
+.settings/
+*.launch
+.project
+.cproject
+
+# 빌드 결과물 (컴파일 시 생성되는 파일들)
+Debug/
+Release/
+*.o
+*.elf
+*.bin
+*.map
+*.hex
+
+# 운영체제 임시 파일
+Thumbs.db
+.DS_Store
