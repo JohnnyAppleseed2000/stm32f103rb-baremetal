@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Delete 4 resources" deleteContents="false" description="Delete 4 resources" element1="/stm32f1xx_drivers/bsp/ds3231.c" element2="/stm32f1xx_drivers/bsp/ds3231.h" element3="/stm32f1xx_drivers/bsp/lcd.c" element4="/stm32f1xx_drivers/bsp/lcd.h" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="4" stamp="1768991067429"/>&#x0A;<refactoring comment="Delete resource &apos;USART_hello&apos;" deleteContents="false" description="Delete resource &apos;USART_hello&apos;" element1="/USART_hello" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1769073628249"/>
-</session>

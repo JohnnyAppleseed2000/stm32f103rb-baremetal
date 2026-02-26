@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;stm32f1xx_drivers/BSP&apos; to &apos;bsp&apos;" description="Rename resource &apos;BSP&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="BSP" name="bsp" stamp="1768990905428" updateReferences="true"/>
-</session>
