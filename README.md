@@ -1,4 +1,4 @@
-# stm32f103rb-baremetal
+# STM32 BareMetal 드라이버 구현 프로젝트
 🚀 STM32F103RB Bare-Metal Driver Development
 본 프로젝트는 STM32F103RB(Cortex-M3) MCU의 주변장치를 HAL 라이브러리 없이 레지스터 직접 제어(Bare-Metal) 방식으로 드라이버를 설계하고 구현한 실습 기록입니다.
 
