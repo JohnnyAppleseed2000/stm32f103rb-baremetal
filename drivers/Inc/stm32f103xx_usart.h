@@ -11,7 +11,7 @@
 #include "stm32f103xx.h"
 
 /*
- * Configuration structure for USARTx peripheral
+ * USART configuration 구조체
  */
 typedef struct
 {
@@ -24,7 +24,7 @@ typedef struct
 }USART_Config_t;
 
 /*
- * Handle structure for USARTx peripheral
+ * USART 핸들 구조체
  */
 typedef struct
 {
@@ -39,16 +39,14 @@ typedef struct
 }USART_Handle_t;
 
 /*
- *@USART_Mode
- *Possible options for USART_Mode
+ * USART 송신/수신/송수신 모드 
  */
 #define USART_MODE_ONLY_TX 	0
 #define USART_MODE_ONLY_RX 	1
 #define USART_MODE_TXRX  	2
 
 /*
- *@USART_Baud
- *Possible options for USART_Baud
+ * Baud rate
  */
 #define USART_STD_BAUD_1200					1200
 #define USART_STD_BAUD_2400					400
@@ -65,23 +63,20 @@ typedef struct
 
 
 /*
- *@USART_ParityControl
- *Possible options for USART_ParityControl
+ * USART Parity 설정
  */
 #define USART_PARITY_EN_ODD   2
 #define USART_PARITY_EN_EVEN  1
 #define USART_PARITY_DISABLE   0
 
 /*
- *@USART_WordLength
- *Possible options for USART_WordLength
+ * USART 데이터 길이 (8bit/9bit)
  */
 #define USART_WORDLEN_8BITS  0
 #define USART_WORDLEN_9BITS  1
 
 /*
- *@USART_NoOfStopBits
- *Possible options for USART_NoOfStopBits
+ * Stopbit 개수
  */
 #define USART_STOPBITS_1     0
 #define USART_STOPBITS_0_5   1
@@ -90,8 +85,7 @@ typedef struct
 
 
 /*
- *@USART_HWFlowControl
- *Possible options for USART_HWFlowControl
+ * USART Hardware flow control
  */
 #define USART_HW_FLOW_CTRL_NONE    	0
 #define USART_HW_FLOW_CTRL_CTS    	1
@@ -108,21 +102,20 @@ typedef struct
 #define USART_FLAG_TC 			( 1 << USART_SR_TC)
 
 /*
- * Application states
+ * USART 상태
  */
 #define USART_BUSY_IN_RX 1
 #define USART_BUSY_IN_TX 2
 #define USART_READY 0
 
 /*
- * I2C application events macros
+ * USART 이벤트 macro
  */
 #define USART_EVENT_TX_CMPLT 0
 #define USART_EVENT_RX_CMPLT 1
 
 /******************************************************************************************
- *								APIs supported by this driver
- *		 For more information about the APIs check the function definitions
+ *								USART API
  ******************************************************************************************/
 /*
  * USART Peripheral Clock setup

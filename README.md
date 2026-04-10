@@ -1,86 +1,49 @@
-# STM32 BareMetal 드라이버 구현 프로젝트
-🚀 STM32F103RB Bare-Metal Driver Development
-본 프로젝트는 STM32F103RB(Cortex-M3) MCU의 주변장치를 HAL 라이브러리 없이 레지스터 직접 제어(Bare-Metal) 방식으로 드라이버를 설계하고 구현한 실습 기록입니다.
+#  STM32 Bare-metal Peripheral Drivers
 
-📌 프로젝트 개요
-목적: MCU 내부 레지스터 구조 이해 및 하드웨어 제어 역량 강화
+> **HAL 라이브러리를 사용하지 않고, 오직 데이터시트 분석을 통해 구현한 레지스터 레벨 드라이버 라이브러리입니다.**
 
-타겟 보드: STM32F103RB (NUCLEO-F103RB)
+이 프로젝트는 MCU의 내부 동작 원리를 깊이 있게 이해하고, 자원이 제한된 임베디드 환경에서 최적화된 드라이버를 설계하는 역량을 증명하기 위해 진행되었습니다.
 
-개발 환경: STM32CubeIDE, GNU Arm Embedded Toolchain
+---
 
-주요 특징:
+##  핵심 역량 (Key Highlights)
+* **Register-level Programming:** 주소 기반 포인터 조작을 통한 하드웨어 직접 제어.
+* **Datasheet Analysis:** STM32 Reference Manual(RM0008) 분석을 통한 레지스터 구조 및 제어 시퀀스 설계.
+* **Clock Tree Configuration:** RCC 설계를 통한 시스템 클록 및 주변장치 활성화.
 
-CMSIS 라이브러리를 활용한 레지스터 맵핑
+---
 
-Polling 및 Interrupt 기반의 데이터 송수신 구현
+##  구현된 주변장치 (Implemented Peripherals)
 
-각 주변장치별 독립적인 드라이버 구조 설계
+### 1. GPIO (General Purpose I/O)
+* 모드 설정(Input, Output, Alternate Function) 및 비트 마스킹을 통한 고속 제어 구현.
 
-📂 폴더 구조
-Src/: 각 주변장치별 테스트 애플리케이션 (Main logic)
+### 2. UART (Universal Asynchronous RX/TX)
+* 시스템 클록 기반 **Baud Rate 직접 계산** 및 ISR(Interrupt Service Routine)을 활용한 비동기 데이터 수신.
+  <img width="785" height="303" alt="006I2C_tx_testing" src="https://github.com/user-attachments/assets/6e69d529-d0de-481b-b6cb-85811c9fbbd4" />
 
-drivers/Inc/: 주변장치 드라이버 헤더 파일 (레지스터 정의 및 API 선언)
-
-drivers/Src/: 주변장치 드라이버 소스 파일 (드라이버 로직 구현)
-
-Startup/: MCU 부팅 시퀀스 및 벡터 테이블 설정
-
-💻 구현 및 실습 내용
-1. GPIO (General Purpose I/O)
-실습: 001ToggleLED.c, 002ButtonLEDPolling.c, 003ButtonLEDInterrupt.c
-
-내용:
-
-Push-pull/Open-drain 모드 설정 및 속도 제어
-
-외부 인터럽트(EXTI)를 활용한 버튼 입력 처리
-
-2. SPI (Serial Peripheral Interface)
-실습: 004Spi_Tx_testing.c, 005Spi_Tx_arduino.c, 006spi_cmd_handle.c
-
-내용:
-
-Full-duplex 통신 모드 구현
-
-Arduino와 연동한 Master-Slave 데이터 송수신 및 커맨드 핸들링
-
-3. I2C (Inter-Integrated Circuit)
-실습: 007I2C_Tx_arduino.c, 008I2C_Rx_arduino.c, 009I2C_RX_IT_arduino.c
-
-내용:
-
-I2C 프로토콜을 이용한 데이터 마스터 송수신 구현
-
-Interrupt 기반 비동기 데이터 수신 로직 적용
-
-4. USART (Universal Synchronous/Asynchronous Receiver Transmitter)
-실습: 010USART_Tx_arduino.c, 011USART_Tx_IT_arduino.c
-
-내용:
-
-보드레이트(Baudrate) 계산 및 설정
-
-시리얼 통신을 통한 디버깅 데이터 전송
-
-5. RTC (Real Time Clock) & Others
-실습: 012rtc_lcd.c, button.c, pulluptest.c
-
-내용:
-
-RTC를 활용한 시간 데이터 관리 및 LCD 출력 연동
-
-내부 Pull-up/Pull-down 저항 설정 테스트
-
-🛠️ 기술적 도전 및 해결
-인터럽트 동기화: volatile 키워드를 사용하여 인터럽트 서비스 루틴(ISR) 내 변수값의 최적화 문제를 해결하였습니다.
-
-통신 프로토콜 디버깅: 로직 분석기를 활용하여 SPI/I2C 통신 시 데이터 프레임 및 타이밍을 분석하며 드라이버의 신뢰성을 확보했습니다.
+### 3. SPI (Serial Peripheral Interface)
+* Full-duplex Master 모드 구현 및 통신 모드(CPOL, CPHA) 수동 설정을 통한 외부 센서 동기화.
+  <img width="885" height="484" alt="004Spi_Tx_testing" src="https://github.com/user-attachments/assets/033b68dc-1761-4bc4-9f03-5909641d21b9" />
+### 4. I2C (Inter-Integrated Circuit)
+* 7-bit Addressing, Start/Stop/Ack 시그널링 직접 제어 및 버스 상태 모니터링 로직 구현.
+  <img width="785" height="303" alt="006I2C_tx_testing" src="https://github.com/user-attachments/assets/6e69d529-d0de-481b-b6cb-85811c9fbbd4" />
 
 
 
-<img width="785" height="303" alt="006I2C_tx_testing" src="https://github.com/user-attachments/assets/6e69d529-d0de-481b-b6cb-85811c9fbbd4" />
-<img width="885" height="484" alt="004Spi_Tx_testing" src="https://github.com/user-attachments/assets/033b68dc-1761-4bc4-9f03-5909641d21b9" />
-<img width="1472" height="325" alt="010USART_Tx_arduino" src="https://github.com/user-attachments/assets/a099995a-ce5d-4ef3-9b4e-ebc6f0c35af0" />
+---
 
+## 💻 Code Snippet: UART Register Access
 
+```c
+void UART2_Init(void) {
+    // 1. USART2 클록 활성화
+    RCC->APB1ENR |= (1 << 17); 
+    
+    // 2. Baud rate 직접 설정 (PCLK=36MHz, Baud=115200)
+    // BRR = 36,000,000 / 115,200 = 312.5
+    USART2->BRR = (19 << 4) | (8 << 0); 
+    
+    // 3. TX/RX 및 USART 활성화
+    USART2->CR1 |= (1 << 2) | (1 << 3) | (1 << 13);
+}

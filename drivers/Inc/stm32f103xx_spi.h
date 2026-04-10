@@ -13,9 +13,8 @@
 #include <stdint.h>
 
 /*
- * This is a configuration struct for SPI pin
+ * SPI configuration 구조체
  */
-
 typedef struct
  {
 	uint8_t SPI_DeviceMode;		//Master or Slave mode selection
@@ -28,9 +27,8 @@ typedef struct
 }SPI_PinConfig_t;
 
 /*
- * Handle Structure for SPI Pin
+ * SPI 핸들 함수
  */
-
 typedef struct
 {
 	SPI_RegDef_t *pSPIx;
@@ -44,29 +42,24 @@ typedef struct
 }SPI_Handle_t;
 
 
-/*
- * SPI application states
- */
 #define SPI_READY 					0
 #define SPI_BUSY_IN_RX 				1
 #define SPI_BUSY_IN_TX 				2
 
-/*
- * Possible SPI Application events
- */
+
 #define SPI_EVENT_TX_CMPLT   1
 #define SPI_EVENT_RX_CMPLT   2
 #define SPI_EVENT_OVR_ERR    3
 
 /*
- * @SPI_DeviceMode
+ * 기기 설정 (master/slave)
  */
 #define SPI_DEVICE_MODE_MASTER    1
 #define SPI_DEVICE_MODE_SLAVE     0
 
 
 /*
- * @SPI_BusConfig
+ * Bus 설정
  */
 #define SPI_BUS_CONFIG_FD                1
 #define SPI_BUS_CONFIG_HD                2
@@ -74,7 +67,7 @@ typedef struct
 #define SPI_BUS_CONFIG_SIMPLEX_TXONLY    4
 
 /*
- * @SPI_SclkSpeed
+ * SCLK
  */
 #define SPI_SCLK_SPEED_DIV2             	0
 #define SPI_SCLK_SPEED_DIV4             	1
@@ -86,37 +79,37 @@ typedef struct
 #define SPI_SCLK_SPEED_DIV256             	7
 
 /*
- * @SPI_DFF
+ * DFF
  */
 #define SPI_DFF_8BITS 	0
 #define SPI_DFF_16BITS  1
 
 /*
- * @CPOL
+ * CPOL
  */
 #define SPI_CPOL_HIGH 1
 #define SPI_CPOL_LOW 0
 
 /*
- * @CPHA
+ * CPHA
  */
 #define SPI_CPHA_HIGH 1
 #define SPI_CPHA_LOW 0
 
 /*
- * @SPI_SSM
+ * SSM
  */
 #define SPI_SSM_EN     1
 #define SPI_SSM_DI     0
 
 /*
- * @SPI_TX
+ * TX
  */
 #define SPI_TX_EMPTY    1
 #define SPI_TX_NEMPTY   0
 
 /*
- * @SPI_RX
+ * RX
  */
 #define SPI_RX_EMPTY    0
 #define SPI_RX_NEMPTY   1
@@ -126,12 +119,12 @@ typedef struct
 
 
 /*****************************************************************************************
- * 								SPI APIs supported by this driver
+ * 								SPI API
  *****************************************************************************************/
 
 
 /*
- * Peripheral Clock setup
+ * 클럭 활성화
  */
 void SPIPeriClockControl(SPI_RegDef_t *pSPIx, uint8_t EnorDi);
 
@@ -143,12 +136,12 @@ void SPI_Init(SPI_Handle_t *pSPIHandle);
 void SPI_DeInit(SPI_RegDef_t *pSPIx);
 
 /*
- * Check the Flag from Status regiser
+ * Flag 검사
  */
 uint8_t SPI_GetFlagStatus(SPI_RegDef_t *pSPIx, uint8_t Flagname);
 
 /*
- * Data Send and Receive
+ * 데이터 송수신
  */
 void SPI_SendData(SPI_RegDef_t *pSPIx,uint8_t *pTxBuffer, uint32_t Len);
 void SPI_ReceiveData(SPI_RegDef_t *pSPIx, uint8_t *pRxBuffer, uint32_t Len);
@@ -157,14 +150,14 @@ uint8_t SPI_SendDataIT(SPI_Handle_t *pSPIHandle,uint8_t *pTxBuffer, uint32_t Len
 uint8_t SPI_ReceiveDataIT(SPI_Handle_t *pSPIHandle, uint8_t *pRxBuffer, uint32_t Len);
 
 /*
- *  IRQ Configuration and ISR Handling
+ *  인터럽트 함수
  */
 void SPI_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi);
 void SPI_IRQPriorityConfig(uint8_t IRQNumber, uint8_t IRQPriority);
 void SPI_IRQHandling(SPI_Handle_t *pSPIHandle);
 
 /*
- * Other peripheral control APIs
+ * 기타 API
  */
 void SPIPeriControl(SPI_RegDef_t *pSPIx, uint8_t EnorDi);
 void SSIControl(SPI_RegDef_t *pSPIx, uint8_t EnorDi);

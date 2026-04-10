@@ -15,20 +15,7 @@
 									 (x == GPIOF) ? 5 : \
 									 (x == GPIOG) ? 6 : 0 )
 
-/*********************************************************************
- * @fn      		  - GPIO_PeriClockControl
- *
- * @brief             - This function enables or disables peripheral clock for the given GPIO port
- *
- * @param[in]         - base address of the gpio peripheral
- * @param[in]         - ENABLE or DISABLE macros
- * @param[in]         -
- *
- * @return            -  none
- *
- * @Note              -  none
-
- */
+// GPIO 클럭 제어
 void GPIO_PeriClockControl(GPIO_RegDef_t *pGPIOx, uint8_t EnorDi)
 {
 	if (EnorDi == ENABLE)
@@ -83,25 +70,13 @@ void GPIO_PeriClockControl(GPIO_RegDef_t *pGPIOx, uint8_t EnorDi)
 }
 
 
-/*********************************************************************
- * @fn      		  - GPIO_Init
- *
- * @brief             - This function initializes GPIO configuration
- *
- * @param[in]         -
- * @param[in]         -
- * @param[in]         -
- *
- * @return            -  none
- *
- * @Note              -  none
-
- */
+// GPIO 초기화
 void GPIO_Init(GPIO_Handle_t *pGPIOHandle)
 {
-	uint32_t temp = 0; // temporary register
+	uint32_t temp = 0; 
 	uint8_t pin =  pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber;
-	//enable the peripheral clock
+
+	// GPIO 클럭 활성화
 
 	GPIO_PeriClockControl(pGPIOHandle->pGPIOx, ENABLE);
 
@@ -168,21 +143,8 @@ void GPIO_Init(GPIO_Handle_t *pGPIOHandle)
 }
 
 
-/*********************************************************************
- * @fn      		  - GPIO_DeInit
- *
- * @brief             - This function de-initializes GPIO configuration
- *
- * @param[in]         -
- * @param[in]         -
- * @param[in]         -
- *
- * @return            -  none
- *
- * @Note              -  none
-
- */
-void GPIO_DeInit(GPIO_RegDef_t *pGPIOx){ //TODO : Add AFIO Disable
+// GPIO 
+void GPIO_DeInit(GPIO_RegDef_t *pGPIOx){ 
 	if(pGPIOx == GPIOA)
 	{
 		GPIOA_REG_RESET();
@@ -208,20 +170,7 @@ void GPIO_DeInit(GPIO_RegDef_t *pGPIOx){ //TODO : Add AFIO Disable
 }
 
 
-/*********************************************************************
- * @fn      		  - GPIO_ReadFromInputPin
- *
- * @brief             - This function de-initializes GPIO configuration
- *
- * @param[in]         -
- * @param[in]         -
- * @param[in]         -
- *
- * @return            -  none
- *
- * @Note              -  none
-
- */
+// GPIO Pin 입력 함수
 uint8_t GPIO_ReadFromInputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber)
 {
 	uint8_t value;
@@ -232,20 +181,7 @@ uint8_t GPIO_ReadFromInputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber)
 }
 
 
-/*********************************************************************
- * @fn      		  - GPIO_ReadFromInputPort
- *
- * @brief             - This function de-initializes GPIO configuration
- *
- * @param[in]         -
- * @param[in]         -
- * @param[in]         -
- *
- * @return            -  none
- *
- * @Note              -  none
-
- */
+// GPIO Port 입력 함수
 uint16_t GPIO_ReadFromInputPort(GPIO_RegDef_t *pGPIOx)
 {
 	uint16_t value;
@@ -256,68 +192,29 @@ uint16_t GPIO_ReadFromInputPort(GPIO_RegDef_t *pGPIOx)
 }
 
 
-/*********************************************************************
- * @fn      		  - GPIO_WritetoOutputPin
- *
- * @brief             -This function writes a value to GPIO pin output
- *
- * @param[in]         -
- * @param[in]         -
- * @param[in]         -
- *
- * @return            -  none
- *
- * @Note              -  none
-
- */
+// GPIO Pin 출력 함수
 void GPIO_WritetoOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber, uint8_t Value){
 	if (Value == GPIO_PIN_SET)
 	{
-		// write 1 to the output pin
+		// 1 출력
 		pGPIOx->ODR |= (1 << PinNumber);
 	}else
 	{
-		// write 0 to output pin
+		// 0출력 
 		pGPIOx->ODR &= ~(1 << PinNumber);
 	}
 }
 
 
-/*********************************************************************
- * @fn      		  - GPIO_WritetoOutputPort
- *
- * @brief             - This function writes a value to GPIO port output
- *
- * @param[in]         -
- * @param[in]         -
- * @param[in]         -
- *
- * @return            -  none
- *
- * @Note              -  none
-
- */
+// GPIO Port 출력 함수
 void GPIO_WritetoOutputPort(GPIO_RegDef_t *pGPIOx, uint16_t Value)
 {
-	// write the value to port ( ex: 0xFFFF )
+	// 값 출력
 	pGPIOx->ODR = Value;
 }
 
 
-/*********************************************************************
- * @fn      		  - GPIO_ToggleOutputPin
- *
- * @brief             - This function toggles GPIO LED
- *
- * @param[in]         -
- * @param[in]         -
- * @param[in]         -
- *
- * @return            -  none
- *
- * @Note              -  none
-
- */
+// GPIO pin 토글 함수
 void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber)
 {
 	pGPIOx->ODR ^= (1 << PinNumber);
@@ -325,12 +222,13 @@ void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber)
 
 
 /*
- *  IRQ Configuration and ISR Handling
+ *  IRQ Configuration과 인터럽트 핸들 함수
  */
 void GPIO_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi)
 {
 	if (EnorDi)
 	{
+		// Cortex-M3 칩의 NVIC_ISER 레지스터를 통해 인터럽트 활성화
 		if (IRQNumber < 32)
 		{
 			//program ISER0 register
@@ -348,6 +246,7 @@ void GPIO_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi)
 		}
 	}else
 	{
+		// 인터럽트 비활성화
 		if (IRQNumber < 32)
 		{
 			//program ICER0 register
@@ -366,9 +265,9 @@ void GPIO_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi)
 	}
 }
 
+// 인터럽트 우선순위
 void GPIO_IRQPriorityConfig(uint8_t IRQNumber, uint8_t IRQPriority)
 {
-	//1. first lets find out the ipr register
 		uint8_t iprx = IRQNumber / 4;
 		uint8_t iprx_section  = IRQNumber %4 ;
 
@@ -376,8 +275,9 @@ void GPIO_IRQPriorityConfig(uint8_t IRQNumber, uint8_t IRQPriority)
 		*(NVIC_PR_BASE_ADDR + iprx) |= IRQPriority << shift_amount;
 }
 
+
 void GPIO_IRQHandling(uint8_t PinNumber){
-	//clear the exti pr register corresponding to the pin number
+	// pending 레지스터의 해당 핀 값 삭제
 	if(EXTI->PR & ( 1 << PinNumber))
 	{
 		//clear

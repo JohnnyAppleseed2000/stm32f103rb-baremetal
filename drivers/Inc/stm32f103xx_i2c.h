@@ -11,7 +11,7 @@
 #include "stm32f103xx.h"
 
 /*
- * Configuration structure for I2Cx peripheral
+ * I2C Configuration 구조체
  */
 typedef struct
 {
@@ -23,25 +23,25 @@ typedef struct
 }I2C_Config_t;
 
 /*
- *Handle structure for I2Cx peripheral
+ *	I2Cx Handle 구조체
  */
 typedef struct
 {
 	I2C_RegDef_t 	*pI2Cx;
 	I2C_Config_t 	I2C_Config;
-	uint8_t 		*pTxBuffer; /* !< To store the app. Tx buffer address > */
-	uint8_t 		*pRxBuffer;	/* !< To store the app. Rx buffer address > */
-	uint32_t 		TxLen;		/* !< To store Tx len > */
-	uint32_t 		RxLen;		/* !< To store Tx len > */
-	uint8_t 		TxRxState;	/* !< To store Communication state > */
-	uint8_t 		DevAddr;	/* !< To store slave/device address > */
-    uint32_t        RxSize;		/* !< To store Rx size  > */
-    uint8_t         Sr;			/* !< To store repeated start value  > */
+	uint8_t 		*pTxBuffer; // Tx Buffer 주소
+	uint8_t 		*pRxBuffer;	// Rx Buffer 주소
+	uint32_t 		TxLen;		// Tx 길이
+	uint32_t 		RxLen;		// Rx 길이
+	uint8_t 		TxRxState;	// Tx Rx 상태
+	uint8_t 		DevAddr;	// 기기 주소
+    uint32_t        RxSize;		
+    uint8_t         Sr;			
 }I2C_Handle_t;
 
 
 /*
- * @I2C_SCLSpeed
+ * I2C Standard Mode & Fast Mode
  */
 #define I2C_SCL_SPEED_SM 	100000
 #define I2C_SCL_SPEED_FM4K 	400000
@@ -49,14 +49,14 @@ typedef struct
 
 
 /*
- * @I2C_AckControl
+ * AckControl
  */
 #define I2C_ACK_ENABLE        1
 #define I2C_ACK_DISABLE       0
 
 
 /*
- * @I2C_FMDutyCycle
+ * FM Duty Cycle
  */
 #define I2C_FM_DUTY_2        0
 #define I2C_FM_DUTY_16_9     1
@@ -68,7 +68,7 @@ typedef struct
 #define I2C_SR_ENABLE    	 1
 
 /*
- * I2C State
+ * I2C 상태
  */
 #define I2C_READY    		 0
 #define I2C_BUSY_IN_TX     	 1
@@ -88,8 +88,7 @@ typedef struct
 #define I2C_EV_DATA_REQ         8
 #define I2C_EV_DATA_RCV         9
 /******************************************************************************************
- *								APIs supported by this driver
- *		 For more information about the APIs check the function definitions
+ *								I2C Api
  ******************************************************************************************/
 /*
  * I2C Peripheral Clock setup
@@ -100,15 +99,17 @@ void I2C_PeriClockControl(I2C_RegDef_t *pI2Cx, uint8_t EnorDi);
  * I2C peripheral setup
  */
 void I2C_PeripheralControl(I2C_RegDef_t *pI2Cx, uint8_t EnorDi);
+
 /*
- * Init and De-init
+ * Initializtion & De-Initialization
  */
+
 void I2C_Init(I2C_Handle_t *pI2CHandle);
 void I2C_DeInit(I2C_RegDef_t *pI2Cx);
 
 
 /*
- * Data Send and Receive
+ * 데이터 송수신 API
  */
 void I2C_MasterSendData(I2C_Handle_t *pI2CHandle,uint8_t *pTxbuffer, uint32_t Len, uint8_t SlaveAddr, uint8_t Sr);
 void I2C_MasterReceiveData(I2C_Handle_t *pI2CHandle,uint8_t *pRxBuffer, uint8_t Len, uint8_t SlaveAddr, uint8_t Sr);
@@ -123,7 +124,7 @@ void I2C_SlaveSendData(I2C_RegDef_t *pI2C,uint8_t data);
 uint8_t I2C_SlaveReceiveData(I2C_RegDef_t *pI2C);
 
 /*
- * IRQ Configuration and ISR handling
+ * 인터럽트 API
  */
 void I2C_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi);
 void I2C_IRQPriorityConfig(uint8_t IRQNumber, uint32_t IRQPriority);
@@ -131,18 +132,12 @@ void I2C_EV_IRQHandling(I2C_Handle_t *pI2CHandle);
 void I2C_ER_IRQHandling(I2C_Handle_t *pI2CHandle);
 
 /*
- * Other Peripheral Control APIs
+ * 기타 API
  */
-void I2C_PeripheralControl(I2C_RegDef_t *pI2Cx, uint8_t EnOrDi);
 uint8_t I2C_GetFlagStatus(I2C_RegDef_t *pI2Cx , uint32_t FlagName);
 void I2C_ManageAcking(I2C_RegDef_t *pI2Cx, uint8_t EnorDi);
 void I2C_StopGeneration(I2C_RegDef_t *pI2Cx);
-
 void I2C_SlaveEnableDisableCallbackEvents(I2C_RegDef_t *pI2Cx,uint8_t EnorDi);
-
-/*
- * Application callback
- */
 void I2C_ApplicationEventCallback(I2C_Handle_t *pI2CHandle,uint8_t AppEv);
 
 #endif /* INC_STM32F103XX_I2C_H_ */
