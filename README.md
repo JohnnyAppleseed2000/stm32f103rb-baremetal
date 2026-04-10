@@ -78,12 +78,9 @@ RTC를 활용한 시간 데이터 관리 및 LCD 출력 연동
 통신 프로토콜 디버깅: 로직 분석기를 활용하여 SPI/I2C 통신 시 데이터 프레임 및 타이밍을 분석하며 드라이버의 신뢰성을 확보했습니다.
 
 
-<img width="1150" height="412" alt="007I2C_Rx_IT" src="https://github.com/user-attachments/assets/bdb148db-3598-4057-b188-0e09de7ec60e" />
+
 <img width="785" height="303" alt="006I2C_tx_testing" src="https://github.com/user-attachments/assets/6e69d529-d0de-481b-b6cb-85811c9fbbd4" />
-<img width="940" height="367" alt="006I2C_tx_testing(2)" src="https://github.com/user-attachments/assets/e1f8883a-e803-4861-9a25-58d4720b765a" />
-<img width="678" height="444" alt="004아두이노 결과" src="https://github.com/user-attachments/assets/a77ca4b7-8cb2-444f-b149-94bd323604e7" />
 <img width="885" height="484" alt="004Spi_Tx_testing" src="https://github.com/user-attachments/assets/033b68dc-1761-4bc4-9f03-5909641d21b9" />
-<img width="1159" height="386" alt="012rtc_lcd" src="https://github.com/user-attachments/assets/d60b16f5-93c6-4560-8252-7c5738d87b12" />
 <img width="1472" height="325" alt="010USART_Tx_arduino" src="https://github.com/user-attachments/assets/a099995a-ce5d-4ef3-9b4e-ebc6f0c35af0" />
-<img width="1056" height="917" alt="007I2C_Rx_testing" src="https://github.com/user-attachments/assets/9de0a6df-a8ef-45a4-84bf-6e5628732038" />
+
 
