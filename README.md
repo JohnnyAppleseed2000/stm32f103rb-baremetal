@@ -6,14 +6,14 @@
 
 ---
 
-##  핵심 역량 (Key Highlights)
+##  핵심 역량
 * **Register-level Programming:** 주소 기반 포인터 조작을 통한 하드웨어 직접 제어.
 * **Datasheet Analysis:** STM32 Reference Manual(RM0008) 분석을 통한 레지스터 구조 및 제어 시퀀스 설계.
 * **Clock Tree Configuration:** RCC 설계를 통한 시스템 클록 및 주변장치 활성화.
 
 ---
 
-##  구현된 주변장치 (Implemented Peripherals)
+##  구현된 주변장치
 
 ### 1. GPIO (General Purpose I/O)
 * 모드 설정(Input, Output, Alternate Function) 및 비트 마스킹을 통한 고속 제어 구현.
